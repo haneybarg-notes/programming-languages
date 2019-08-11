@@ -1,4 +1,4 @@
-# -*- after-save-hook: org-latex-export-to-pdf; -*-
+# -*- oafter-save-hook: org-latex-export-to-pdf; -*-
 #+options: date:nil
 #+language: bt-br
 #+latex_header: \usepackage[a4paper, margin=2cm]{geometry}

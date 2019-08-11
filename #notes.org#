@@ -1,0 +1,115 @@
+# -*- oafter-save-hook: org-latex-export-to-pdf; -*-
+#+options: date:nil
+#+language: bt-br
+#+latex_header: \usepackage[a4paper, margin=2cm]{geometry}
+#+latex_header: \usepackage{indentfirst}
+#+latex_header: \usepackage[]{babel}
+#+latex_header: \usepackage{float}
+#+latex_header: \usepackage{color, colortbl}
+#+latex_header: \usepackage{titling}
+#+latex_header: \setlength{\droptitle}{-1.5cm}
+#+latex_header: \hypersetup{ colorlinks = true, urlcolor = blue }
+#+latex_header: \definecolor{beige}{rgb}{0.93,0.93,0.82}
+#+latex_header: \definecolor{brown}{rgb}{0.4,0.2,0.0}
+
+
+#+AUTHOR: Fernanda Guimarães
+#+TITLE: Notes LP
+* (05/08/19) What are programming languages?
+  Programming languages are turing complete. Html is not a programming language. Assembly is.
+  The formal definition is:
+  - Syntax
+  - Semantics
+  -
+
+  Words are easier to remember than numbers.
+
+** Fortran
+  IBM. It brought two news:
+  - There are variables
+  - Control structures (loops, conditionals).
+
+  Parsing: read a chain of characters and transform it into a data structure (a tree).
+
+** Lisp
+  Paretheses.
+
+  Based on mathematical functions and lists.
+
+  News:  no need for parsing, built on linked lists.
+
+** ALGOL
+  Two news:
+  - Type notation
+  - Begin and end
+
+** COBOL
+   Grace Hopper.
+
+   Looks like a natural language.
+
+** How many are there?
+   O'Reilly says that there are 2500, wikipedia says 650. Java is the most popular
+   (portability).
+
+*** Different purposes
+    - Fortan: scientific calculus
+    - Lisp: computer theory
+    - COBOL: comercial applications
+    - Algol: academic languages
+
+** C
+   Denis Reed
+
+   It was made to finish UNIX.
+
+   It's popular because the compiler already came with UNIX.
+
+** PHP
+   Recursive name.
+
+   Useful for web servers.
+   
+   Came to supply the need for Pearl.
+
+   Came with Apache, not efficient.
+
+  
+* (07/08/19) Types of languages
+ State = memory
+ 
+ Parsing = produce derivation trees for some chain of characters.
+
+ A program in x86 is a set of instructions.
+
+ Prolog isn't a patternized language.
+
+** Imperatives (state)
+   - C
+   - Cpp
+   - Java
+   - Python
+   - C# 
+** Declaratives (stateless)
+   There are no steps.
+*** Functionals
+    Lambda calculus.
+    - ML
+    - Haskell
+    - Erlang
+    - Elixir
+    - Scala
+*** Logicals
+    Horn clause.
+    - Prolog
+    - Datalog
+** Grammars
+   - Tokens (terminals)
+   - Non-terminals
+   - Production rules
+   - Start symbol
+*** Types
+    - Regulars: super fast.      
+    - Context-free: can only have a symbol on the left side of production.
+    - Context-sensitive: many symbols (right side is bigger or equal to left side).
+    - Irrestricted grammar: Turing Machines.

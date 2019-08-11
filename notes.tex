@@ -1,0 +1,173 @@
+% Created 2019-08-07 Wed 14:19
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{minted}
+\usepackage[a4paper, margin=2cm]{geometry}
+\usepackage{indentfirst}
+\usepackage[, brazilian]{babel}
+\usepackage{float}
+\usepackage{color, colortbl}
+\usepackage{titling}
+\setlength{\droptitle}{-1.5cm}
+\hypersetup{ colorlinks = true, urlcolor = blue }
+\definecolor{beige}{rgb}{0.93,0.93,0.82}
+\definecolor{brown}{rgb}{0.4,0.2,0.0}
+\author{Fernanda Guimarães}
+\date{}
+\title{Notes LP}
+\hypersetup{
+ pdfauthor={Fernanda Guimarães},
+ pdftitle={Notes LP},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 26.2 (Org mode 9.1.9)}, 
+ pdflang={Brazilian}}
+\begin{document}
+
+\maketitle
+\section{(05/08/19) What are programming languages?}
+\label{sec:orgb961183}
+Programming languages are turing complete. Html is not a programming language. Assembly is.
+The formal definition is:
+\begin{itemize}
+\item Syntax
+\item Semantics
+\item 
+\end{itemize}
+
+Words are easier to remember than numbers.
+
+\subsection{Fortran}
+\label{sec:org60185ca}
+IBM. It brought two news:
+\begin{itemize}
+\item There are variables
+\item Control structures (loops, conditionals).
+\end{itemize}
+
+Parsing: read a chain of characters and transform it into a data structure (a tree).
+
+\subsection{Lisp}
+\label{sec:org2f5a2e2}
+Paretheses.
+
+Based on mathematical functions and lists.
+
+News:  no need for parsing, built on linked lists.
+
+\subsection{ALGOL}
+\label{sec:org6d6b405}
+Two news:
+\begin{itemize}
+\item Type notation
+\item Begin and end
+\end{itemize}
+
+\subsection{COBOL}
+\label{sec:org8472e0a}
+Grace Hopper.
+
+Looks like a natural language.
+
+\subsection{How many are there?}
+\label{sec:org34b7c3a}
+O'Reilly says that there are 2500, wikipedia says 650. Java is the most popular
+(portability).
+
+\subsubsection{Different purposes}
+\label{sec:org6c63283}
+\begin{itemize}
+\item Fortan: scientific calculus
+\item Lisp: computer theory
+\item COBOL: comercial applications
+\item Algol: academic languages
+\end{itemize}
+
+\subsection{C}
+\label{sec:org211bc00}
+Denis Reed
+
+It was made to finish UNIX.
+
+It's popular because the compiler already came with UNIX.
+
+\subsection{PHP}
+\label{sec:org1c0b9c2}
+Recursive name.
+
+Useful for web servers.
+
+Came to supply the need for Pearl.
+
+Came with Apache, not efficient.
+
+
+\section{(07/08/19) Types of languages}
+\label{sec:orga983a0c}
+State = memory
+
+Parsing = produce derivation trees for some chain of characters.
+
+A program in x86 is a set of instructions.
+
+Prolog isn't a patternized language.
+
+\subsection{Imperatives (state)}
+\label{sec:orgc5c005b}
+\begin{itemize}
+\item C
+\item Cpp
+\item Java
+\item Python
+\item C\#
+\end{itemize}
+\subsection{Declaratives (stateless)}
+\label{sec:org6b6a5b2}
+There are no steps.
+\subsubsection{Functionals}
+\label{sec:org1445299}
+Lambda calculus.
+\begin{itemize}
+\item ML
+\item Haskell
+\item Erlang
+\item Elixir
+\item Scala
+\end{itemize}
+\subsubsection{Logicals}
+\label{sec:orgfa7c23d}
+Horn clause.
+\begin{itemize}
+\item Prolog
+\item Datalog
+\end{itemize}
+\subsection{Grammars}
+\label{sec:org655f98b}
+\begin{itemize}
+\item Tokens (terminals)
+\item Non-terminals
+\item Production rules
+\item Start symbol
+\end{itemize}
+\subsubsection{Types}
+\label{sec:orgabb5297}
+\begin{itemize}
+\item Regulars: super fast.
+\item Context-free: can only have a symbol on the left side of production.
+\item Context-sensitive: many symbols (right side is bigger or equal to left side).
+\item Irrestricted grammar: Turing Machines.
+\end{itemize}
+\end{document}

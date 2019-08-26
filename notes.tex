@@ -1,4 +1,4 @@
-% Created 2019-08-11 Sun 12:31
+% Created 2019-08-26 Mon 14:33
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -39,7 +39,7 @@
 
 \maketitle
 \section{(05/08/19) What are programming languages?}
-\label{sec:org20a939d}
+\label{sec:org3ae303e}
 Programming languages are turing complete. Html is not a programming language. Assembly is.
 The formal definition is:
 \begin{itemize}
@@ -51,7 +51,7 @@ The formal definition is:
 Words are easier to remember than numbers.
 
 \subsection{Fortran}
-\label{sec:org917dafc}
+\label{sec:orgb30d4af}
 IBM. It brought two news:
 \begin{itemize}
 \item There are variables
@@ -61,7 +61,7 @@ IBM. It brought two news:
 Parsing: read a chain of characters and transform it into a data structure (a tree).
 
 \subsection{Lisp}
-\label{sec:orge120966}
+\label{sec:org2bb4852}
 Paretheses.
 
 Based on mathematical functions and lists.
@@ -69,7 +69,7 @@ Based on mathematical functions and lists.
 News:  no need for parsing, built on linked lists.
 
 \subsection{ALGOL}
-\label{sec:org018876c}
+\label{sec:orgde62ca6}
 Two news:
 \begin{itemize}
 \item Type notation
@@ -77,18 +77,18 @@ Two news:
 \end{itemize}
 
 \subsection{COBOL}
-\label{sec:org09416ec}
+\label{sec:org671c8a1}
 Grace Hopper.
 
 Looks like a natural language.
 
 \subsection{How many are there?}
-\label{sec:org43a51a8}
+\label{sec:org1e7d7a9}
 O'Reilly says that there are 2500, wikipedia says 650. Java is the most popular
 (portability).
 
 \subsubsection{Different purposes}
-\label{sec:org58add98}
+\label{sec:org7b7f957}
 \begin{itemize}
 \item Fortan: scientific calculus
 \item Lisp: computer theory
@@ -97,7 +97,7 @@ O'Reilly says that there are 2500, wikipedia says 650. Java is the most popular
 \end{itemize}
 
 \subsection{C}
-\label{sec:org3b0d595}
+\label{sec:org2591466}
 Denis Reed
 
 It was made to finish UNIX.
@@ -105,7 +105,7 @@ It was made to finish UNIX.
 It's popular because the compiler already came with UNIX.
 
 \subsection{PHP}
-\label{sec:org6300787}
+\label{sec:org5d83f51}
 Recursive name.
 
 Useful for web servers.
@@ -114,9 +114,8 @@ Came to supply the need for Pearl.
 
 Came with Apache, not efficient.
 
-
 \section{(07/08/19) Types of languages}
-\label{sec:orgbf40934}
+\label{sec:org4b92735}
 State = memory
 
 Parsing = produce derivation trees for some chain of characters.
@@ -126,7 +125,7 @@ A program in x86 is a set of instructions.
 Prolog isn't a patternized language.
 
 \subsection{Imperatives (state)}
-\label{sec:org751f6e0}
+\label{sec:orgf8a5ef7}
 \begin{itemize}
 \item C
 \item Cpp
@@ -135,10 +134,10 @@ Prolog isn't a patternized language.
 \item C\#
 \end{itemize}
 \subsection{Declaratives (stateless)}
-\label{sec:org52eddab}
+\label{sec:org53109c0}
 There are no steps.
 \subsubsection{Functionals}
-\label{sec:org377ab43}
+\label{sec:orgd6b3012}
 Lambda calculus.
 \begin{itemize}
 \item ML
@@ -148,14 +147,14 @@ Lambda calculus.
 \item Scala
 \end{itemize}
 \subsubsection{Logicals}
-\label{sec:org4287419}
+\label{sec:orga753895}
 Horn clause.
 \begin{itemize}
 \item Prolog
 \item Datalog
 \end{itemize}
 \subsection{Grammars}
-\label{sec:orgfd9d52f}
+\label{sec:org4515c43}
 \begin{itemize}
 \item Tokens (terminals)
 \item Non-terminals
@@ -163,11 +162,154 @@ Horn clause.
 \item Start symbol
 \end{itemize}
 \subsubsection{Types}
-\label{sec:org3fc26a4}
+\label{sec:orgc822473}
 \begin{itemize}
 \item Regulars: super fast.
 \item Context-free: can only have a symbol on the left side of production.
 \item Context-sensitive: many symbols (right side is bigger or equal to left side).
 \item Irrestricted grammar: Turing Machines.
+\end{itemize}
+\section{(12/08/19) Precedence}
+\label{sec:org7b9ac8d}
+Parsing is used in compilers, valgrind, static verification, etc.
+There are two semantics aspects of languages:
+\begin{itemize}
+\item Associativity
+\item Precedence
+\end{itemize}
+
+In C, there are unary, binary and ternary operators. The closer to the roots, bigger the precedence
+
+At  tribution is associative to the right.
+\section{(14/08/19) Compilation}
+\label{sec:org6c8ec18}
+Search for: arithmetic identities of gcc.
+
+Programming languages are usually compiled (ex assembly), virtualized (ex python) or
+interpreted (ex bash).
+
+Virtualized are compiled to a virtual machine. 
+
+\subsection{Why are some programs interpreted, others interpreted and others virtualized?}
+\label{sec:org5ce4bd9}
+Because of efficiency. It's better to compile the program when the execution time is
+really large.
+\subsection{Compilation}
+\label{sec:org97aa50b}
+The classical Sequence:
+[editor] --> source file --> [preprocessor] --> preprocessed source file
+--> [compiler] --> assembly language file --> [assembler] -->
+object file --> [linker] --> executable file -->
+[loader] --> running program in memory
+
+\section{(19/08/19) Introduction to ML}
+\label{sec:org8e05184}
+Important: an algoritm that in C has less complexity than in ML.
+There isn't implicit coersion. Everything is explicit.
+
+Declarative Functional language. Follows the lambda-calculus. Program \textbf{is} a value, and
+not a sequence of state alterations. Every program in ML has a type. A bunch of
+functional languages have type inference.
+
+Built around \emph{unification}.
+
+The five primitive types are: bool, int, real, char and string.
+
+You can't compare real and int, but you can convert one to another.
+
+Every if has an else, because every program is a value.
+
+Functions have a very high precedence.
+
+\subsection{Tuples}
+\label{sec:org2dced73}
+Tuples are indexed by 1. There are no one-element tuples.
+
+Every fun in ML receives only \textbf{one} parameter.
+
+Type contructor = '*'. It's like a fun that receives types and returns types. It's like
+generics in Java and templates in cpp.
+
+\subsection{Lists}
+\label{sec:org503f1a9}
+Read head and read tail in O(1), same types.
+\begin{itemize}
+\item\relax [1,2,3];
+\end{itemize}
+\emph{val it = [1,2,3] : int list}
+\begin{itemize}
+\item\relax [1.0,2.0];
+\end{itemize}
+\emph{val it = [1.0,2.0] : real list}
+
+@ is O(n). :: is O(1) and associated to the right.
+
+\emph{Explode} splits a string into a list of chars.
+
+If the '\(=\)' operator appears in a definition of a fun, then real numbers cannot be used.
+
+You can force a fun to be real (it can come in several places):
+
+\emph{fun prod(a,b):real = a * b;}
+
+The output of the type inference can be exponential.
+\section{(21/08/19) Pattern matching in ML}
+\label{sec:orgbefdbe0}
+Undescores are better than a variable that is never going to be used.
+Two '' mean there are no real numbers.
+\section{(26/08/19) Type}
+\label{sec:org824b992}
+Types are a set of values. Brainfuck and Forth don't have types. Type systems avoid some
+erros.
+
+Advantages: 
+\begin{itemize}
+\item Documentation
+\item Safety
+\item Efficiency
+\item Correctness
+\end{itemize}
+
+In C, the size depends of the compiler. R is a language for array manipulation, so is
+matlab and APL.
+
+
+\subsection{Primitive vs Constructed}
+\label{sec:orga302818}
+Primitive is built-in. Constructed types are just sets built from other sets.
+
+You can make constructed types by cartesian product, for example.
+
+In C, an enumeration is a subset of ints. Structs are stored sequentially.
+
+In Ml, you can only do a \emph{comparison} with an enumeration.
+
+The cardinality of a type is the product of its types cardinalities.
+
+\subsection{Vectors}
+\label{sec:org683b7a9}
+Three abstractions: lists, vectors and strings.
+
+Vectors are a multidimensional cartesian product of the same set (same type).
+
+\subsection{Union}
+\label{sec:orgeebe156}
+The cardinality is the \emph{sum} of the cardinality of its types. The space occupied is the
+largest element's size.
+\subsection{Functions}
+\label{sec:org2555943}
+A map that maps the domain to a range. In C, you can pass a function as a parameters
+with a address.
+\subsection{Static vs Dyamic Typing}
+\label{sec:org9ad9013}
+\begin{itemize}
+\item Static examples: C, Java, \emph{SML}, Cpp, Haskell.
+\item Dynamic examples: Python, Javascript, Lisp, PHP, Ruby.
+
+Static are more efficient. Bigger programs tend to be written in statically typed
+languages. Are more legible.
+
+Dynamically typed typed languages are more reusable. This kind of reuse is called
+duck typing.
 \end{itemize}
 \end{document}

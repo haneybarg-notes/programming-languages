@@ -1,4 +1,4 @@
-% Created 2019-08-26 Mon 14:33
+% Created 2019-08-28 Wed 14:33
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -39,7 +39,7 @@
 
 \maketitle
 \section{(05/08/19) What are programming languages?}
-\label{sec:org3ae303e}
+\label{sec:orga8f388d}
 Programming languages are turing complete. Html is not a programming language. Assembly is.
 The formal definition is:
 \begin{itemize}
@@ -51,7 +51,7 @@ The formal definition is:
 Words are easier to remember than numbers.
 
 \subsection{Fortran}
-\label{sec:orgb30d4af}
+\label{sec:org6e38e71}
 IBM. It brought two news:
 \begin{itemize}
 \item There are variables
@@ -61,7 +61,7 @@ IBM. It brought two news:
 Parsing: read a chain of characters and transform it into a data structure (a tree).
 
 \subsection{Lisp}
-\label{sec:org2bb4852}
+\label{sec:orgb9fc0f2}
 Paretheses.
 
 Based on mathematical functions and lists.
@@ -69,7 +69,7 @@ Based on mathematical functions and lists.
 News:  no need for parsing, built on linked lists.
 
 \subsection{ALGOL}
-\label{sec:orgde62ca6}
+\label{sec:org05eb11f}
 Two news:
 \begin{itemize}
 \item Type notation
@@ -77,18 +77,18 @@ Two news:
 \end{itemize}
 
 \subsection{COBOL}
-\label{sec:org671c8a1}
+\label{sec:org47b65b9}
 Grace Hopper.
 
 Looks like a natural language.
 
 \subsection{How many are there?}
-\label{sec:org1e7d7a9}
+\label{sec:orgb8434c0}
 O'Reilly says that there are 2500, wikipedia says 650. Java is the most popular
 (portability).
 
 \subsubsection{Different purposes}
-\label{sec:org7b7f957}
+\label{sec:orga8d444d}
 \begin{itemize}
 \item Fortan: scientific calculus
 \item Lisp: computer theory
@@ -97,7 +97,7 @@ O'Reilly says that there are 2500, wikipedia says 650. Java is the most popular
 \end{itemize}
 
 \subsection{C}
-\label{sec:org2591466}
+\label{sec:orge9aab18}
 Denis Reed
 
 It was made to finish UNIX.
@@ -105,7 +105,7 @@ It was made to finish UNIX.
 It's popular because the compiler already came with UNIX.
 
 \subsection{PHP}
-\label{sec:org5d83f51}
+\label{sec:orgc6cd7c6}
 Recursive name.
 
 Useful for web servers.
@@ -115,7 +115,7 @@ Came to supply the need for Pearl.
 Came with Apache, not efficient.
 
 \section{(07/08/19) Types of languages}
-\label{sec:org4b92735}
+\label{sec:orgbbf442c}
 State = memory
 
 Parsing = produce derivation trees for some chain of characters.
@@ -125,7 +125,7 @@ A program in x86 is a set of instructions.
 Prolog isn't a patternized language.
 
 \subsection{Imperatives (state)}
-\label{sec:orgf8a5ef7}
+\label{sec:orgb610ba8}
 \begin{itemize}
 \item C
 \item Cpp
@@ -134,10 +134,10 @@ Prolog isn't a patternized language.
 \item C\#
 \end{itemize}
 \subsection{Declaratives (stateless)}
-\label{sec:org53109c0}
+\label{sec:orgf1c156d}
 There are no steps.
 \subsubsection{Functionals}
-\label{sec:orgd6b3012}
+\label{sec:org947befc}
 Lambda calculus.
 \begin{itemize}
 \item ML
@@ -147,14 +147,14 @@ Lambda calculus.
 \item Scala
 \end{itemize}
 \subsubsection{Logicals}
-\label{sec:orga753895}
+\label{sec:org9529d20}
 Horn clause.
 \begin{itemize}
 \item Prolog
 \item Datalog
 \end{itemize}
 \subsection{Grammars}
-\label{sec:org4515c43}
+\label{sec:org5bc8751}
 \begin{itemize}
 \item Tokens (terminals)
 \item Non-terminals
@@ -162,7 +162,7 @@ Horn clause.
 \item Start symbol
 \end{itemize}
 \subsubsection{Types}
-\label{sec:orgc822473}
+\label{sec:orgdb27402}
 \begin{itemize}
 \item Regulars: super fast.
 \item Context-free: can only have a symbol on the left side of production.
@@ -170,7 +170,7 @@ Horn clause.
 \item Irrestricted grammar: Turing Machines.
 \end{itemize}
 \section{(12/08/19) Precedence}
-\label{sec:org7b9ac8d}
+\label{sec:orgdae3c73}
 Parsing is used in compilers, valgrind, static verification, etc.
 There are two semantics aspects of languages:
 \begin{itemize}
@@ -182,20 +182,20 @@ In C, there are unary, binary and ternary operators. The closer to the roots, bi
 
 At  tribution is associative to the right.
 \section{(14/08/19) Compilation}
-\label{sec:org6c8ec18}
+\label{sec:orgb60670e}
 Search for: arithmetic identities of gcc.
 
 Programming languages are usually compiled (ex assembly), virtualized (ex python) or
 interpreted (ex bash).
 
-Virtualized are compiled to a virtual machine. 
+Virtualized are compiled to a virtual machine.
 
 \subsection{Why are some programs interpreted, others interpreted and others virtualized?}
-\label{sec:org5ce4bd9}
+\label{sec:org0a1eeaf}
 Because of efficiency. It's better to compile the program when the execution time is
 really large.
 \subsection{Compilation}
-\label{sec:org97aa50b}
+\label{sec:org7977643}
 The classical Sequence:
 [editor] --> source file --> [preprocessor] --> preprocessed source file
 --> [compiler] --> assembly language file --> [assembler] -->
@@ -203,7 +203,7 @@ object file --> [linker] --> executable file -->
 [loader] --> running program in memory
 
 \section{(19/08/19) Introduction to ML}
-\label{sec:org8e05184}
+\label{sec:org1e95fd5}
 Important: an algoritm that in C has less complexity than in ML.
 There isn't implicit coersion. Everything is explicit.
 
@@ -222,7 +222,7 @@ Every if has an else, because every program is a value.
 Functions have a very high precedence.
 
 \subsection{Tuples}
-\label{sec:org2dced73}
+\label{sec:orge8e86ad}
 Tuples are indexed by 1. There are no one-element tuples.
 
 Every fun in ML receives only \textbf{one} parameter.
@@ -231,7 +231,7 @@ Type contructor = '*'. It's like a fun that receives types and returns types. It
 generics in Java and templates in cpp.
 
 \subsection{Lists}
-\label{sec:org503f1a9}
+\label{sec:org6cbd8c5}
 Read head and read tail in O(1), same types.
 \begin{itemize}
 \item\relax [1,2,3];
@@ -254,15 +254,15 @@ You can force a fun to be real (it can come in several places):
 
 The output of the type inference can be exponential.
 \section{(21/08/19) Pattern matching in ML}
-\label{sec:orgbefdbe0}
+\label{sec:orgab99feb}
 Undescores are better than a variable that is never going to be used.
 Two '' mean there are no real numbers.
 \section{(26/08/19) Type}
-\label{sec:org824b992}
+\label{sec:org1ce2662}
 Types are a set of values. Brainfuck and Forth don't have types. Type systems avoid some
 erros.
 
-Advantages: 
+Advantages:
 \begin{itemize}
 \item Documentation
 \item Safety
@@ -275,7 +275,7 @@ matlab and APL.
 
 
 \subsection{Primitive vs Constructed}
-\label{sec:orga302818}
+\label{sec:orgb1b7c53}
 Primitive is built-in. Constructed types are just sets built from other sets.
 
 You can make constructed types by cartesian product, for example.
@@ -287,21 +287,21 @@ In Ml, you can only do a \emph{comparison} with an enumeration.
 The cardinality of a type is the product of its types cardinalities.
 
 \subsection{Vectors}
-\label{sec:org683b7a9}
+\label{sec:orgf085f89}
 Three abstractions: lists, vectors and strings.
 
 Vectors are a multidimensional cartesian product of the same set (same type).
 
 \subsection{Union}
-\label{sec:orgeebe156}
+\label{sec:orgf7b38d9}
 The cardinality is the \emph{sum} of the cardinality of its types. The space occupied is the
 largest element's size.
 \subsection{Functions}
-\label{sec:org2555943}
+\label{sec:org4ccae4f}
 A map that maps the domain to a range. In C, you can pass a function as a parameters
 with a address.
 \subsection{Static vs Dyamic Typing}
-\label{sec:org9ad9013}
+\label{sec:orge353561}
 \begin{itemize}
 \item Static examples: C, Java, \emph{SML}, Cpp, Haskell.
 \item Dynamic examples: Python, Javascript, Lisp, PHP, Ruby.
@@ -312,4 +312,86 @@ languages. Are more legible.
 Dynamically typed typed languages are more reusable. This kind of reuse is called
 duck typing.
 \end{itemize}
+
+\subsection{Strongly vs weakly typed}
+\label{sec:orgf97a8ba}
+A strongly typed language guarantees that a type will be always used as declared.
+
+\begin{itemize}
+\item Strongly: haskell, ml.
+\item Weakly: c, cpp. Ex: unions, coersion, idexing.
+\end{itemize}
+
+\section{(28/08/19) Polymorfism}
+\label{sec:orgcc71427}
+\subsection{Strategies to discover types}
+\label{sec:orgdd2ad50}
+\begin{itemize}
+\item Implicit: types are inferred.
+\begin{itemize}
+\item Inference: the compiler uses an algorithm that finds the correct type of
+each value. Examples: Haskell, Scala, SML.
+\item Special names: In some old languages, the name of the variable gives away
+its type. Example: in old Fortran, integer variables should start with 'I'.
+\end{itemize}
+\item Explicit: syntax determines types.
+\begin{itemize}
+\item Annotations: the programmer must explicitly write the type of a symbol
+next to it. Examples: Java, C, C++.
+\end{itemize}
+\end{itemize}
+
+\subsection{Equivalence:}
+\label{sec:orgc26b02f}
+\begin{itemize}
+\item name equivalence: two types are the same, if, and only if, they have the
+same name: C, Java, C++, etc. Advantage: legibility.
+\item structural equivalence: two types are the same if they have the same
+structure. Example: SML. Advantage: reusability.
+\end{itemize}
+
+\subsection{Polymorfism}
+\label{sec:org6535ad1}
+Python is way more reusable than C or SML. The secret to get closer to Python is
+polymorfism. A function or operator is \textbf{polymorphic} if it has at least two possible
+types
+
+Which statically typed language gets closer to python? Two types of polymorfism:
+\begin{itemize}
+\item ad-hoc (infinite symbols)
+\item universal
+\end{itemize}
+
+\subsubsection{Ad-hoc}
+\label{sec:org7805028}
+\begin{itemize}
+\item Overload. Uses the types to choose the definition.
+\item Coersion. Uses the definition to choose a type conversion.
+\end{itemize}
+
+\begin{enumerate}
+\item Overload:
+\label{sec:orgfd4079a}
+An overloaded function name or operator is one that has at least two definitions, all
+of different types. Many languages have overloaded operators. There are languages
+that allow the programmer to change the meaning of operators.
+
+\item Coersion:
+\label{sec:org3ed6314}
+A coercion is an implicit type conversion, supplied automatically even if the
+programmer leaves it out.
+\end{enumerate}
+\subsubsection{Universal}
+\label{sec:org759f954}
+\begin{itemize}
+\item Parametric
+\item Subtyping
+\end{itemize}
+
+\begin{enumerate}
+\item Subtyping:
+\label{sec:org5b1da42}
+Barbara Liskov's principle. Subtyping \textbf{isn't} the same as inheritance. Not the only
+mecanism to create subptypes.
+\end{enumerate}
 \end{document}

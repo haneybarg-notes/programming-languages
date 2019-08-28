@@ -69,14 +69,14 @@
    Recursive name.
 
    Useful for web servers.
-   
+
    Came to supply the need for Pearl.
 
    Came with Apache, not efficient.
 
 * (07/08/19) Types of languages
  State = memory
- 
+
  Parsing = produce derivation trees for some chain of characters.
 
  A program in x86 is a set of instructions.
@@ -88,7 +88,7 @@
    - Cpp
    - Java
    - Python
-   - C# 
+   - C#
 ** Declaratives (stateless)
    There are no steps.
 *** Functionals
@@ -108,7 +108,7 @@
    - Production rules
    - Start symbol
 *** Types
-    - Regulars: super fast.      
+    - Regulars: super fast.
     - Context-free: can only have a symbol on the left side of production.
     - Context-sensitive: many symbols (right side is bigger or equal to left side).
     - Irrestricted grammar: Turing Machines.
@@ -117,17 +117,17 @@
   There are two semantics aspects of languages:
   - Associativity
   - Precedence
-    
+
   In C, there are unary, binary and ternary operators. The closer to the roots, bigger the precedence
-  
+
   At  tribution is associative to the right.
 * (14/08/19) Compilation
   Search for: arithmetic identities of gcc.
 
   Programming languages are usually compiled (ex assembly), virtualized (ex python) or
   interpreted (ex bash).
-  
-  Virtualized are compiled to a virtual machine. 
+
+  Virtualized are compiled to a virtual machine.
 
 ** Why are some programs interpreted, others interpreted and others virtualized?
    Because of efficiency. It's better to compile the program when the execution time is
@@ -138,7 +138,7 @@
    --> [compiler] --> assembly language file --> [assembler] -->
    object file --> [linker] --> executable file -->
    [loader] --> running program in memory
-  
+
 * (19/08/19) Introduction to ML
   Important: an algoritm that in C has less complexity than in ML.
   There isn't implicit coersion. Everything is explicit.
@@ -159,9 +159,9 @@
 
 ** Tuples
    Tuples are indexed by 1. There are no one-element tuples.
-   
+
    Every fun in ML receives only *one* parameter.
-   
+
    Type contructor = '*'. It's like a fun that receives types and returns types. It's like
    generics in Java and templates in cpp.
 
@@ -177,9 +177,9 @@
   /Explode/ splits a string into a list of chars.
 
   If the '$=$' operator appears in a definition of a fun, then real numbers cannot be used.
-  
+
   You can force a fun to be real (it can come in several places):
-  
+
     /fun prod(a,b):real = a * b;/
 
   The output of the type inference can be exponential.
@@ -189,8 +189,8 @@
 * (26/08/19) Type
   Types are a set of values. Brainfuck and Forth don't have types. Type systems avoid some
   erros.
-  
-  Advantages: 
+
+  Advantages:
    - Documentation
    - Safety
    - Efficiency
@@ -202,7 +202,7 @@
 
 ** Primitive vs Constructed
    Primitive is built-in. Constructed types are just sets built from other sets.
-   
+
    You can make constructed types by cartesian product, for example.
 
    In C, an enumeration is a subset of ints. Structs are stored sequentially.
@@ -232,4 +232,54 @@
      Dynamically typed typed languages are more reusable. This kind of reuse is called
      duck typing.
 
-     
+** Strongly vs weakly typed
+   A strongly typed language guarantees that a type will be always used as declared.
+
+   - Strongly: haskell, ml.
+   - Weakly: c, cpp. Ex: unions, coersion, idexing.
+
+* (28/08/19) Polymorfism
+** Strategies to discover types
+  - Implicit: types are inferred.
+    - Inference: the compiler uses an algorithm that finds the correct type of
+      each value. Examples: Haskell, Scala, SML.
+    - Special names: In some old languages, the name of the variable gives away
+      its type. Example: in old Fortran, integer variables should start with 'I'.
+  - Explicit: syntax determines types.
+    - Annotations: the programmer must explicitly write the type of a symbol
+      next to it. Examples: Java, C, C++.
+
+** Equivalence:
+   - name equivalence: two types are the same, if, and only if, they have the
+     same name: C, Java, C++, etc. Advantage: legibility.
+   - structural equivalence: two types are the same if they have the same
+     structure. Example: SML. Advantage: reusability.
+
+** Polymorfism
+   Python is way more reusable than C or SML. The secret to get closer to Python is
+   polymorfism. A function or operator is *polymorphic* if it has at least two possible
+   types
+
+   Which statically typed language gets closer to python? Two types of polymorfism:
+   - ad-hoc (infinite symbols)
+   - universal
+
+*** Ad-hoc
+    - Overload. Uses the types to choose the definition.
+    - Coersion. Uses the definition to choose a type conversion.
+
+**** Overload:
+     An overloaded function name or operator is one that has at least two definitions, all
+     of different types. Many languages have overloaded operators. There are languages
+     that allow the programmer to change the meaning of operators.
+
+**** Coersion:
+     A coercion is an implicit type conversion, supplied automatically even if the
+     programmer leaves it out.
+*** Universal
+    - Parametric
+    - Subtyping
+
+**** Subtyping:
+     Barbara Liskov's principle. Subtyping *isn't* the same as inheritance. Not the only
+     mecanism to create subptypes.

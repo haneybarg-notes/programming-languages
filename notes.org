@@ -84,6 +84,8 @@
  Prolog isn't a patternized language.
 
 ** Imperatives (state)
+   Turing machines.
+
    - C
    - Cpp
    - Java
@@ -283,3 +285,65 @@
 **** Subtyping:
      Barbara Liskov's principle. Subtyping *isn't* the same as inheritance. Not the only
      mecanism to create subptypes.
+* (02/09/19) Lambda calculus
+** Lambda expressions:  
+
+   Each lambda declares a different name.
+  
+   #+begin_example
+   <expr> ::= <name>
+         | \lambda <name> . <expr> |
+         | <expr> <expr>           |
+
+   #+end_example   
+  
+
+   \[(\lambda x \cdot x) \cdot w\], where
+
+
+   #+begin_export latex
+   \begin{align*}     
+     & x_0 = \text{formal parameter} \\
+     & x_1 = \text{function body} \\
+     & w   = \text{real parameters} \\
+   \end{align*}
+   #+end_export
+         
+   
+** Numbers
+   A number is a function that takes a function s plus a constant z. The
+   number N is formed by applying s N times on z.
+   #+begin_example
+   Zero = \s.\z.z
+   One = \s.\z.sz
+   Two = \s.\z.s(sz)
+   Three = \s.\z.s(s(sz))
+   #+end_example
+* (04/09/19) Currying and Higher order
+** Currying
+   Then it is not possible to implement a function which take multiple parameters? Of
+   course, it is possible, by a methodology called currying.In currying every function
+   takes only one argument and returns a function. While the last function in this series
+   will return the desired output.
+
+** Anonymous Functions
+   Starts with /fn/ (lambda functions). You can't do a recursive anonymous function.
+
+   In SML, we can create anonymous functions, e.g: (fn x => x + 2) 3.
+
+   'fn' is the equivalent of lambdas in SML, e.g:
+   \x.x is equivalent to fn x => x
+
+   - val ZERO = fn s => fn z => z;
+   - val ONE = fn s => fn z => s z;
+   - val TWO = fn s => fn z => s (s z);
+   - val THREE = fn s => fn z => s (s (s z));
+
+** Higher Order
+   Each function has an order:
+   - A function that does not take other functions as parameters, and does not return a
+     function value, has order 1
+   - A function that takes a function as a parameter or returns a function value has order
+     n+1, where n is the order of its highest-order parameter or returned value     
+**** Foldr and Foldl
+     Only return the same when operators are both associative and commutative.

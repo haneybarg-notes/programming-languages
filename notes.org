@@ -16,7 +16,7 @@
 #+AUTHOR: Fernanda Guimarães
 #+TITLE: Notes LP
 * (05/08/19) What are programming languages?
-  Programming languages are turing complete. Html is not a programming language. Assembly is.
+  Programming languages are turing complete. Html  is not a programming language. Assembly is.
   The formal definition is:
   - Syntax
   - Semantics
@@ -81,7 +81,7 @@
 
  A program in x86 is a set of instructions.
 
- Prolog isn't a patternized language.
+ Prolog isn't a patternized language. 
 
 ** Imperatives (state)
    Turing machines.
@@ -97,16 +97,18 @@
     Lambda calculus.
     - ML
     - Haskell
+    - Lisp
     - Erlang
     - Elixir
     - Scala
+    - Clojure
 *** Logicals
     Horn clause.
     - Prolog
     - Datalog
 ** Grammars
    - Tokens (terminals)
-   - Non-terminals
+   - Non-terminals (variables)
    - Production rules
    - Start symbol
 *** Types
@@ -120,9 +122,9 @@
   - Associativity
   - Precedence
 
-  In C, there are unary, binary and ternary operators. The closer to the roots, bigger the precedence
+  In C, there are unary, binary and ternary operators. The closer to the roots, bigger the precedence.
 
-  At  tribution is associative to the right.
+  Attribution is associative to the right.
 * (14/08/19) Compilation
   Search for: arithmetic identities of gcc.
 
@@ -159,7 +161,7 @@
 
   Functions have a very high precedence.
 
-** Tuples
+** Tuples: cartesian product
    Tuples are indexed by 1. There are no one-element tuples.
 
    Every fun in ML receives only *one* parameter.
@@ -201,7 +203,6 @@
    In C, the size depends of the compiler. R is a language for array manipulation, so is
    matlab and APL.
 
-
 ** Primitive vs Constructed
    Primitive is built-in. Constructed types are just sets built from other sets.
 
@@ -238,7 +239,7 @@
    A strongly typed language guarantees that a type will be always used as declared.
 
    - Strongly: haskell, ml.
-   - Weakly: c, cpp. Ex: unions, coersion, idexing.
+   - Weakly: c, cpp. Ex: unions, coersion, idexing. Advantage: performance.
 
 * (28/08/19) Polymorfism
 ** Strategies to discover types
@@ -260,16 +261,14 @@
 ** Polymorfism
    Python is way more reusable than C or SML. The secret to get closer to Python is
    polymorfism. A function or operator is *polymorphic* if it has at least two possible
-   types
+   types.
 
    Which statically typed language gets closer to python? Two types of polymorfism:
    - ad-hoc (infinite symbols)
    - universal
-
 *** Ad-hoc
     - Overload. Uses the types to choose the definition.
     - Coersion. Uses the definition to choose a type conversion.
-
 **** Overload:
      An overloaded function name or operator is one that has at least two definitions, all
      of different types. Many languages have overloaded operators. There are languages
@@ -281,10 +280,10 @@
 *** Universal
     - Parametric
     - Subtyping
-
 **** Subtyping:
      Barbara Liskov's principle. Subtyping *isn't* the same as inheritance. Not the only
      mecanism to create subptypes.
+
 * (02/09/19) Lambda calculus
 ** Lambda expressions:  
 
@@ -309,7 +308,6 @@
    \end{align*}
    #+end_export
          
-   
 ** Numbers
    A number is a function that takes a function s plus a constant z. The
    number N is formed by applying s N times on z.
@@ -327,7 +325,8 @@
    will return the desired output.
 
 ** Anonymous Functions
-   Starts with /fn/ (lambda functions). You can't do a recursive anonymous function.
+   Starts with /fn/ (lambda functions). You can't do a recursive anonymous function because
+   it doesn't have a name. For you to do one, you need the /y combinator/.
 
    In SML, we can create anonymous functions, e.g: (fn x => x + 2) 3.
 
@@ -347,3 +346,112 @@
      n+1, where n is the order of its highest-order parameter or returned value     
 **** Foldr and Foldl
      Only return the same when operators are both associative and commutative.
+* (11/09/19) Data Types/algebric types
+  [[http://www.webber-labs.com/wp-content/uploads/2015/08/mpl-11.pdf][Slides]]
+  In C, the union is the closest to algebric types.
+
+  Data constructors :: Labels
+  Data Types :: constructors
+
+** Datatype: union in ML
+   New types can be defined using the keyword datatype.
+
+   These declarations define both:
+   – type constructors for making new (possibly
+   polymorphic) types
+   – data constructors for making values of those
+   new types 
+
+   We've seen two data structures: lists and tuples:
+
+   Lists = nil | e * Lists
+
+   In C, enumerations are like:
+
+   #+BEGIN_SRC c
+     #include <stdio.h>
+     enum Dia {Mon = 3, Tue, Wed, Thu, Fri, Sat, Sun};
+     int main () {
+       printf("%d, %d, %d, %d, %d, %d, %d\n",
+              Mon, Tue, Wed, Thu, Fri, Sat, Sun);
+       printf("%d\n", Mon + Tue);
+     }   
+   #+END_SRC
+
+   In ML:
+  #+BEGIN_SRC sml
+    datatype day = Mon | Tue | Wed | Thu | Fri | Sat | Sun;
+    fun isWeekDay x = if not (x = Sat orelse x = Sun) then true else false ;
+    isWeekDay Mon;
+  #+END_SRC
+
+  
+#+RESULTS:
+: val isWeekDay = fn : day -> bool
+** Extint (of)
+   To recover a data constructor’s parameters, use pattern matching. You can't do the same
+   (pattern matching) with a function.
+** Option - type constructors
+   Is a polymorphic type. Used by predefined functions (or your own) when the result is
+   not always defined
+  #+BEGIN_SRC sml
+    datatype 'a option = NONE | SOME of 'a;
+  #+END_SRC
+  
+* (19/09/19) Review
+  - Ocaml and subtyping
+  - Types of languages
+  - Elixir and Erlang are on the same VM
+  - h::t
+  - Context-free: can only have a symbol on the left side of production and produce 0 or
+    more things on the right side. Given a string, you can always say if a strig belongs,
+    but can't determine wether it's ambiguous (can generate an infinite set of strings).
+    - Tokens (terminals)
+    - Non-terminals (variables)
+    - Production rules
+    - Start symbol
+  - *Serious*: need to write grammar in prolog (attributes and no attributes). Ex: count number of constants.
+  - There are two semantics aspects of languages (for binary operators):
+    - Associativity: which operator to evaluate first (right or left).
+    - Precedence
+  - In ml, :: are associative to the right.
+  - Turing Completes need loops.
+  - Compile, interpret, and virtualize.
+  - In javascript, the browser gets the source code (no binary code). Not x86.
+  - Java is ASCII, bytecodes is a binary language executed in a hw called JVM.
+  - Scala, clojure, kotlin, groov: jvm.
+  - Tuples and lists are the only structures (actually tuples only).
+  - List operations
+  - The pogram with polynoms doesn't fall in the test
+  - The one with the triangles might
+  - six patterns in ml: variables, constants, lists, tuples, nil, h
+  - Types are a set of values. Brainfuck and Forth don't have types. Type systems avoid some
+    erros.
+  - The cardinality of a type is the product of its types cardinalities.
+  - Vectors are a multidimensional cartesian product of the same set (same type).
+  - Tuples have different types
+  - In ml, the union is the datatype.  The cardinality is the /sum/ of the cardinality of
+    its types. The space occupied is the largest element's size.
+  - Cartesians, Vectors, functions and unions.
+  - Static examples: C, Java, /SML/, Cpp, Haskell. 
+  - Dynamic examples: Python, Javascript, Lisp, PHP, Ruby.
+  - Static vs Dyamic, Strongly vs Weak, Nominal vs Structurual, Inference vs annotation. Advantages of each one.
+  - Coersion is like converting.
+  - Advantage of weakly typed: performance.
+  - There's a spectrum of dynamic to static typing.
+  - There is a if then else in m.() in java, for example.
+  - Types of polymorfirsm
+  - Polymorfistm is about statically typed languages. It's point is to get statically typed to be more reusable.
+  - hd function in ml, e.g, is polymorfic.
+  - differnce in universal and ad-hoc.
+  - VAI CAIR OCAML e subtyping.
+  - Watch out with renaming in lambda-calculus (avoid variable captures).
+  - Operations with church number, you gotta know how to do. No succ
+    declaration. Implement add given succ. Convert church number to int.
+  - Map, filter e fold.
+  - Scope is a region where a symbol exists.
+  - Almost every language is static scope.
+  - *Bash* is the only dynamic que presta.
+  - Two types of forming scope: blocks and namespaces.
+  - A tree can be a tree or 2 elements plus a tree.
+  - 

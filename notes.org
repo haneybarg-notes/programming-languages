@@ -404,7 +404,7 @@
   - Elixir and Erlang are on the same VM
   - h::t
   - Context-free: can only have a symbol on the left side of production and produce 0 or
-    more things on the right side. Given a string, you can always say if a strig belongs,
+    more things on the right side. Given a string, you can always say if a string belongs,
     but can't determine wether it's ambiguous (can generate an infinite set of strings).
     - Tokens (terminals)
     - Non-terminals (variables)
@@ -417,7 +417,7 @@
   - In ml, :: are associative to the right.
   - Turing Completes need loops.
   - Compile, interpret, and virtualize.
-  - In javascript, the browser gets the source code (no binary code). Not x86.
+  - In Javascript, the browser gets the source code (no binary code). Not x86.
   - Java is ASCII, bytecodes is a binary language executed in a hw called JVM.
   - Scala, clojure, kotlin, groov: jvm.
   - Tuples and lists are the only structures (actually tuples only).
@@ -455,3 +455,103 @@
   - Two types of forming scope: blocks and namespaces.
   - A tree can be a tree or 2 elements plus a tree.
   - 
+* (30/09/19) Memory allocation
+  Operating System delivers to the program all adressing space.
+
+  Memory is organized in three parts by compiler:
+  1. Static (Cobol/Fortran)
+  2. Stack (Algol)
+  3. Heap (Lisp)
+
+  /Static/ has the same functionality in /C/ and in /Java/:
+
+  #+begin_center
+  Static $==$ compile time
+  #+end_center
+  
+  Consequence: only *one* (ALWAYS) instance of static variable, because its adress is known
+  in compile time.
+
+** Static Memory
+   1. Static
+   2. Global
+   3. Program
+   4. Strings
+
+   
+   Advantages: easy to program.
+
+   Disavantages: lose recursion (big) and [doubt].
+
+* Dynamic Memory
+** Stack
+  Program is usually in a contiguous memory area. Later there is an area that the compiler
+  uses during the program execution, called stack. Usually in C, you only get into a
+  function with a call and leave with a return. In python, Lua and ruby, there are yield
+  and generators. 
+
+  With a stack, I solve the recursion and cuncurrent allocation problem. Almost all
+  languages have a stack that grows top-down.
+
+** Heap
+   Doesn't solve the OO problem nor the "good and evil".  In /C/, the heap is used with a
+   malloc. in Python, everywhere. In java, with /new/. In ML, /clojures/ stay in heap as well.
+   The data that live more than its functions live in the heap. In OOP, the heap is more
+   used (data is more important than functions).
+
+   - *What is malloc's complexity?* free is always O(1). Malloc is O(1) if called
+     alone. Malloc is online (non deterministic) if you call malloc and free
+     alternatively.
+
+   Garbage collector is only in /heap/. There is no need for it in stack (just update a
+   pointer). Heap: allocation and free is out of order.
+   
+   Two ways to do garbage collection:
+   1. Counter - problems: cycles (functional languages don't have this problem)
+   2. Tracing (marcação e varredura): all imperative languages like Java. Mark the
+      reachable space if memory is being used.
+
+* (07/10/19)
+  There is function and data (objects) orientation. Object O is a natural form to get
+  encapsulation. Object orientation is the data knowing how to do stuff.  Simula was the
+  first OO language. Smalltalk was later (more know).  Messages are methods today. It was
+  not common to put operations in tables.
+** Language OO that don't have classes
+   - Lua
+   - Javascript
+** Feautres all OO
+   - have objects 
+   - have methods
+   - heap
+   - subtyping
+   - Dynamic method invocation
+** Some features in OO (not common to all)
+   – Classes
+   – Prototypes
+   – Inheritance
+   – Encapsulation
+   – Polymorphism
+** What is an object?
+   Object is data. It is a table. There are pointers to functions and to itself.
+** Can you create obj without classes?
+   Yes. Example python and scala (clojures).  
+** What is inheritance?
+   Reuse mechanism. In many lanuages like python and Java, inheritance is subtyping. Not
+   in haskell and Ocaml.
+** Can you think about a situation in which we would like to have multiple inheritance?
+   Python and cpp have. Java doesn't. Few languages have multiple inheritance due to
+   ambiguity.
+** What is the Liskov's substitution principle?
+   If S is a subtype of T, then S can be used in any situation where T is expected.
+** Methods in python and Java?
+   - In python, with inheritance, the call is proportional to the tree size.
+   - In Java, it is O(1).
+** Dynamic method invocation
+   - O(1) call is only possible in statically typed languages. For python, the type and
+     adresses are only know in run time.
+** What is the complexity to find the target of a call in Python?
+   O(n).
+** What about the complexity to find the target of a call in Java?
+   O(1).
+** Top down vs bottom up
+   

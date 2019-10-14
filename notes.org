@@ -81,7 +81,7 @@
 
  A program in x86 is a set of instructions.
 
- Prolog isn't a patternized language. 
+ Prolog isn't a patternized language.
 
 ** Imperatives (state)
    Turing machines.
@@ -285,29 +285,29 @@
      mecanism to create subptypes.
 
 * (02/09/19) Lambda calculus
-** Lambda expressions:  
+** Lambda expressions:
 
    Each lambda declares a different name.
-  
+
    #+begin_example
    <expr> ::= <name>
          | \lambda <name> . <expr> |
          | <expr> <expr>           |
 
-   #+end_example   
-  
+   #+end_example
+
 
    \[(\lambda x \cdot x) \cdot w\], where
 
 
    #+begin_export latex
-   \begin{align*}     
+   \begin{align*}
      & x_0 = \text{formal parameter} \\
      & x_1 = \text{function body} \\
      & w   = \text{real parameters} \\
    \end{align*}
    #+end_export
-         
+
 ** Numbers
    A number is a function that takes a function s plus a constant z. The
    number N is formed by applying s N times on z.
@@ -343,7 +343,7 @@
    - A function that does not take other functions as parameters, and does not return a
      function value, has order 1
    - A function that takes a function as a parameter or returns a function value has order
-     n+1, where n is the order of its highest-order parameter or returned value     
+     n+1, where n is the order of its highest-order parameter or returned value
 **** Foldr and Foldl
      Only return the same when operators are both associative and commutative.
 * (11/09/19) Data Types/algebric types
@@ -360,7 +360,7 @@
    – type constructors for making new (possibly
    polymorphic) types
    – data constructors for making values of those
-   new types 
+   new types
 
    We've seen two data structures: lists and tuples:
 
@@ -375,7 +375,7 @@
        printf("%d, %d, %d, %d, %d, %d, %d\n",
               Mon, Tue, Wed, Thu, Fri, Sat, Sun);
        printf("%d\n", Mon + Tue);
-     }   
+     }
    #+END_SRC
 
    In ML:
@@ -385,7 +385,7 @@
     isWeekDay Mon;
   #+END_SRC
 
-  
+
 #+RESULTS:
 : val isWeekDay = fn : day -> bool
 ** Extint (of)
@@ -397,7 +397,7 @@
   #+BEGIN_SRC sml
     datatype 'a option = NONE | SOME of 'a;
   #+END_SRC
-  
+
 * (19/09/19) Review
   - Ocaml and subtyping
   - Types of languages
@@ -433,7 +433,7 @@
   - In ml, the union is the datatype.  The cardinality is the /sum/ of the cardinality of
     its types. The space occupied is the largest element's size.
   - Cartesians, Vectors, functions and unions.
-  - Static examples: C, Java, /SML/, Cpp, Haskell. 
+  - Static examples: C, Java, /SML/, Cpp, Haskell.
   - Dynamic examples: Python, Javascript, Lisp, PHP, Ruby.
   - Static vs Dyamic, Strongly vs Weak, Nominal vs Structurual, Inference vs annotation. Advantages of each one.
   - Coersion is like converting.
@@ -454,7 +454,7 @@
   - *Bash* is the only dynamic que presta.
   - Two types of forming scope: blocks and namespaces.
   - A tree can be a tree or 2 elements plus a tree.
-  - 
+  -
 * (30/09/19) Memory allocation
   Operating System delivers to the program all adressing space.
 
@@ -468,7 +468,7 @@
   #+begin_center
   Static $==$ compile time
   #+end_center
-  
+
   Consequence: only *one* (ALWAYS) instance of static variable, because its adress is known
   in compile time.
 
@@ -478,7 +478,7 @@
    3. Program
    4. Strings
 
-   
+
    Advantages: easy to program.
 
    Disavantages: lose recursion (big) and [doubt].
@@ -488,7 +488,7 @@
   Program is usually in a contiguous memory area. Later there is an area that the compiler
   uses during the program execution, called stack. Usually in C, you only get into a
   function with a call and leave with a return. In python, Lua and ruby, there are yield
-  and generators. 
+  and generators.
 
   With a stack, I solve the recursion and cuncurrent allocation problem. Almost all
   languages have a stack that grows top-down.
@@ -505,7 +505,7 @@
 
    Garbage collector is only in /heap/. There is no need for it in stack (just update a
    pointer). Heap: allocation and free is out of order.
-   
+
    Two ways to do garbage collection:
    1. Counter - problems: cycles (functional languages don't have this problem)
    2. Tracing (marcação e varredura): all imperative languages like Java. Mark the
@@ -520,7 +520,7 @@
    - Lua
    - Javascript
 ** Feautres all OO
-   - have objects 
+   - have objects
    - have methods
    - heap
    - subtyping
@@ -534,7 +534,7 @@
 ** What is an object?
    Object is data. It is a table. There are pointers to functions and to itself.
 ** Can you create obj without classes?
-   Yes. Example python and scala (clojures).  
+   Yes. Example python and scala (clojures).
 ** What is inheritance?
    Reuse mechanism. In many lanuages like python and Java, inheritance is subtyping. Not
    in haskell and Ocaml.
@@ -554,4 +554,124 @@
 ** What about the complexity to find the target of a call in Java?
    O(1).
 ** Top down vs bottom up
-   
+* (09/10/19) Error handling
+  A type system limits the number of programs you can write. and
+  proprietary types in rust.
+** Advantage of these in rust:
+   Avoid aliasing. Avoid errors.
+** Vectorization:
+   Use big registers to do matrix multiplication. Only works when x and y point to
+   different places.
+** Even stronger type systems [idris/agola]
+   Dependent types. Disvantage: limit the number of programs one can write. Advantage:
+   security.
+** C
+    5 types of error handling:
+
+   - Guard method outside func is bad bc you have to remember to put it everywhere you cal pop.
+   - Guard method inside func is bad bc you don't know if the stack is really empty.
+   - Option type: very good, but you receive a option. In swift everything is an
+     option. Atoi returns a special value in c.
+   - Exit: lose reuse bc it aborts program.
+   - Errno: you can get the number of bits errors.
+   - Long jump: dynamic go to to simulate exception.
+** Eiffel (contract programming)
+   - 80's language
+   - pre conditions (require)
+   - pos conditions (ensure)
+
+
+
+** Exceptions (most common)
+   3 things:
+   1. define - class Ex(Exception)
+   2. raise - raise
+   3. treat - try except
+
+   Python (class that inherits Exception), Java, cpp, sml
+*** What is an excption?
+*** Advantages
+*** What is an exception in Java?
+***
+* (14/10/19) Parameters
+  - Formal parameters: in function declaration.
+  - Real parameters: in funcion call.
+
+  - Positional: match by position. Almost all programming languages.
+  - Nominal: match by name. Python, Ada.
+
+    If you use the first argument as nominal and the second as positional, it doesn't
+    compile. Optional parameters are also possible if you use default values. Cpp and
+    python, for example, have optional parameters.
+
+    Const in method determines it doesn't alter the state of the object.
+
+    In C, stdarg allows you to use a variable number of parameters.
+
+    printf accpets a variable number of parameters. It makes a parsing with %.
+    #+BEGIN_SRC python
+      def f(a, L=[]):
+        L.append(a)
+        return L
+    #+END_SRC
+    If you do this and call f(3) after f(2), it returns a list [2, 3].
+** Strict
+*** Pass by value
+    Java, python. If you pass something with pointers, it is by value (address copy) -
+    syntatic sugar. In python, you can alter the thing which you are pointing to, not the
+    thing itself.
+*** Pass by reference
+    Cpp (*only one*). If you pass something with the address as formal parameters, it is by
+    reference.
+*** Not used anymore
+    - Result: the parameter is uninitialized, and it is filled with a value
+    before the function returns.
+    - Value result: same as result, but parameter is initialized.
+*** Why are there only a few pass by reference languages?
+    Collateral effects. With attribution, there is a change in state. By altering the
+    name, you can provoke a change in another name. If a program has pointers, it is
+    really hard for the program to make the code faster (ex matrix multiplication).
+*** How to make swape without an aux?
+    - XOR swap. If you try to swap &a with &a in cpp, everything is 0. Bad business (same
+      address). XOR of something with itself is 0. If you alter one, the effect will be
+      felt on the other thing.
+*** Keyword restrict (c only - not cpp)
+** Strict vs Lazy languages:
+   Strict: arguments are evaluated before passing. Python.
+   - False and 1 / 0 == 0
+   - False
+
+   - def myand(a, b): return a and b
+   - myand(False, 1/0 == 0)
+   - ZeroDivisionError: integer division or modulo by zero
+** Lazy or not strict
+   - Haskell, Scala, cpp and c. Only evaluate if you actually need it.
+*** Pass by macro
+    1. C 
+
+    2. Cpp
+ 
+    3. Lisp
+
+    4. Rust
+
+    Macro expansion: the parameter is evaluated every time it is used.
+**** 10.0) What is the advantage of macro expansion?
+     Resource that allows programmers to alter language syntax, pass type as
+     parameters. Ex foreach. With macros, u can create parametric polymorphism in c.
+**** 10.1) What is the problem with macro expansion (serious problem)?
+     Two problems: variable capture and multiple evaluation (++b).
+     #+BEGIN_SRC cpp
+       #include "stdio.h"
+       #define SWAP(X,Y) {int temp=X; X=Y; Y=temp;}
+       int main() {
+         int a = 2;
+         int temp = 17;
+         printf("%d, temp = %d\n", a, temp);
+         SWAP(a, temp);
+         {int temp=temp; temp=B; temp=temp;}
+         printf("%d, temp = %d\n", a, temp);
+       }
+     #+END_SRC
+*** Pass by name (algo/simula)
+    NÃO CAI NA PROVA.

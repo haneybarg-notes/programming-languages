@@ -1,4 +1,4 @@
-% Created 2019-10-14 Mon 14:24
+% Created 2019-10-16 Wed 14:22
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -39,7 +39,7 @@
 
 \maketitle
 \section{(05/08/19) What are programming languages?}
-\label{sec:orgb4f672f}
+\label{sec:orge879840}
 Programming languages are turing complete. Html  is not a programming language. Assembly is.
 The formal definition is:
 \begin{itemize}
@@ -51,7 +51,7 @@ The formal definition is:
 Words are easier to remember than numbers.
 
 \subsection{Fortran}
-\label{sec:org7c2fc53}
+\label{sec:org811eec3}
 IBM. It brought two news:
 \begin{itemize}
 \item There are variables
@@ -61,7 +61,7 @@ IBM. It brought two news:
 Parsing: read a chain of characters and transform it into a data structure (a tree).
 
 \subsection{Lisp}
-\label{sec:org02ef57c}
+\label{sec:org2772a83}
 Paretheses.
 
 Based on mathematical functions and lists.
@@ -69,7 +69,7 @@ Based on mathematical functions and lists.
 News:  no need for parsing, built on linked lists.
 
 \subsection{ALGOL}
-\label{sec:orgd4238a9}
+\label{sec:orgc569e8b}
 Two news:
 \begin{itemize}
 \item Type notation
@@ -77,18 +77,18 @@ Two news:
 \end{itemize}
 
 \subsection{COBOL}
-\label{sec:orgff11925}
+\label{sec:orgc5e0fae}
 Grace Hopper.
 
 Looks like a natural language.
 
 \subsection{How many are there?}
-\label{sec:orgf5a6c6d}
+\label{sec:orgb5ffde1}
 O'Reilly says that there are 2500, wikipedia says 650. Java is the most popular
 (portability).
 
 \subsubsection{Different purposes}
-\label{sec:org3e30fed}
+\label{sec:org35e9691}
 \begin{itemize}
 \item Fortan: scientific calculus
 \item Lisp: computer theory
@@ -97,7 +97,7 @@ O'Reilly says that there are 2500, wikipedia says 650. Java is the most popular
 \end{itemize}
 
 \subsection{C}
-\label{sec:org882f93f}
+\label{sec:orgcfe8303}
 Denis Reed
 
 It was made to finish UNIX.
@@ -105,7 +105,7 @@ It was made to finish UNIX.
 It's popular because the compiler already came with UNIX.
 
 \subsection{PHP}
-\label{sec:orgd2d914e}
+\label{sec:org662e90d}
 Recursive name.
 
 Useful for web servers.
@@ -115,7 +115,7 @@ Came to supply the need for Pearl.
 Came with Apache, not efficient.
 
 \section{(07/08/19) Types of languages}
-\label{sec:org653cfab}
+\label{sec:org419e640}
 State = memory
 
 Parsing = produce derivation trees for some chain of characters.
@@ -125,7 +125,7 @@ A program in x86 is a set of instructions.
 Prolog isn't a patternized language.
 
 \subsection{Imperatives (state)}
-\label{sec:org8b1b455}
+\label{sec:org760f8f5}
 Turing machines.
 
 \begin{itemize}
@@ -136,10 +136,10 @@ Turing machines.
 \item C\#
 \end{itemize}
 \subsection{Declaratives (stateless)}
-\label{sec:org4e8bcf0}
+\label{sec:orgd1d9e3e}
 There are no steps.
 \subsubsection{Functionals}
-\label{sec:org61b40ef}
+\label{sec:org5ef7609}
 Lambda calculus.
 \begin{itemize}
 \item ML
@@ -151,14 +151,14 @@ Lambda calculus.
 \item Clojure
 \end{itemize}
 \subsubsection{Logicals}
-\label{sec:orga97c1d7}
+\label{sec:orgea12917}
 Horn clause.
 \begin{itemize}
 \item Prolog
 \item Datalog
 \end{itemize}
 \subsection{Grammars}
-\label{sec:org895cae5}
+\label{sec:org8048e28}
 \begin{itemize}
 \item Tokens (terminals)
 \item Non-terminals (variables)
@@ -166,7 +166,7 @@ Horn clause.
 \item Start symbol
 \end{itemize}
 \subsubsection{Types}
-\label{sec:orgaf150b2}
+\label{sec:org327a28e}
 \begin{itemize}
 \item Regulars: super fast.
 \item Context-free: can only have a symbol on the left side of production.
@@ -174,7 +174,7 @@ Horn clause.
 \item Irrestricted grammar: Turing Machines.
 \end{itemize}
 \section{(12/08/19) Precedence}
-\label{sec:org9e04b64}
+\label{sec:org5d23a82}
 Parsing is used in compilers, valgrind, static verification, etc.
 There are two semantics aspects of languages:
 \begin{itemize}
@@ -186,7 +186,7 @@ In C, there are unary, binary and ternary operators. The closer to the roots, bi
 
 Attribution is associative to the right.
 \section{(14/08/19) Compilation}
-\label{sec:org18d23a3}
+\label{sec:orge25119b}
 Search for: arithmetic identities of gcc.
 
 Programming languages are usually compiled (ex assembly), virtualized (ex python) or
@@ -195,11 +195,11 @@ interpreted (ex bash).
 Virtualized are compiled to a virtual machine.
 
 \subsection{Why are some programs interpreted, others interpreted and others virtualized?}
-\label{sec:org3b1102e}
+\label{sec:org06554e4}
 Because of efficiency. It's better to compile the program when the execution time is
 really large.
 \subsection{Compilation}
-\label{sec:orgb70987a}
+\label{sec:org4a25505}
 The classical Sequence:
 [editor] --> source file --> [preprocessor] --> preprocessed source file
 --> [compiler] --> assembly language file --> [assembler] -->
@@ -207,7 +207,7 @@ object file --> [linker] --> executable file -->
 [loader] --> running program in memory
 
 \section{(19/08/19) Introduction to ML}
-\label{sec:org7bc1fd8}
+\label{sec:org36b4171}
 Important: an algoritm that in C has less complexity than in ML.
 There isn't implicit coersion. Everything is explicit.
 
@@ -226,7 +226,7 @@ Every if has an else, because every program is a value.
 Functions have a very high precedence.
 
 \subsection{Tuples: cartesian product}
-\label{sec:org1c9d9d9}
+\label{sec:orgbd940e0}
 Tuples are indexed by 1. There are no one-element tuples.
 
 Every fun in ML receives only \textbf{one} parameter.
@@ -235,7 +235,7 @@ Type contructor = '*'. It's like a fun that receives types and returns types. It
 generics in Java and templates in cpp.
 
 \subsection{Lists}
-\label{sec:orgd730f0b}
+\label{sec:org832dc7b}
 Read head and read tail in O(1), same types.
 \begin{itemize}
 \item\relax [1,2,3];
@@ -258,11 +258,11 @@ You can force a fun to be real (it can come in several places):
 
 The output of the type inference can be exponential.
 \section{(21/08/19) Pattern matching in ML}
-\label{sec:org3305d93}
+\label{sec:org679b595}
 Undescores are better than a variable that is never going to be used.
 Two '' mean there are no real numbers.
 \section{(26/08/19) Type}
-\label{sec:org204bee9}
+\label{sec:org5462ae9}
 Types are a set of values. Brainfuck and Forth don't have types. Type systems avoid some
 erros.
 
@@ -278,7 +278,7 @@ In C, the size depends of the compiler. R is a language for array manipulation, 
 matlab and APL.
 
 \subsection{Primitive vs Constructed}
-\label{sec:org3982755}
+\label{sec:org17c8c84}
 Primitive is built-in. Constructed types are just sets built from other sets.
 
 You can make constructed types by cartesian product, for example.
@@ -290,21 +290,21 @@ In Ml, you can only do a \emph{comparison} with an enumeration.
 The cardinality of a type is the product of its types cardinalities.
 
 \subsection{Vectors}
-\label{sec:org772a886}
+\label{sec:org4946c67}
 Three abstractions: lists, vectors and strings.
 
 Vectors are a multidimensional cartesian product of the same set (same type).
 
 \subsection{Union}
-\label{sec:orgd62bb3e}
+\label{sec:org4c75955}
 The cardinality is the \emph{sum} of the cardinality of its types. The space occupied is the
 largest element's size.
 \subsection{Functions}
-\label{sec:org1636512}
+\label{sec:org000111b}
 A map that maps the domain to a range. In C, you can pass a function as a parameters
 with a address.
 \subsection{Static vs Dyamic Typing}
-\label{sec:org0836a7c}
+\label{sec:orgf71a09b}
 \begin{itemize}
 \item Static examples: C, Java, \emph{SML}, Cpp, Haskell.
 \item Dynamic examples: Python, Javascript, Lisp, PHP, Ruby.
@@ -317,7 +317,7 @@ duck typing.
 \end{itemize}
 
 \subsection{Strongly vs weakly typed}
-\label{sec:orgba2c710}
+\label{sec:org5af1fb5}
 A strongly typed language guarantees that a type will be always used as declared.
 
 \begin{itemize}
@@ -326,9 +326,9 @@ A strongly typed language guarantees that a type will be always used as declared
 \end{itemize}
 
 \section{(28/08/19) Polymorfism}
-\label{sec:org83efb8c}
+\label{sec:org7f18889}
 \subsection{Strategies to discover types}
-\label{sec:org434209d}
+\label{sec:org1b99138}
 \begin{itemize}
 \item Implicit: types are inferred.
 \begin{itemize}
@@ -345,7 +345,7 @@ next to it. Examples: Java, C, C++.
 \end{itemize}
 
 \subsection{Equivalence:}
-\label{sec:org268fa30}
+\label{sec:org8fba4f5}
 \begin{itemize}
 \item name equivalence: two types are the same, if, and only if, they have the
 same name: C, Java, C++, etc. Advantage: legibility.
@@ -354,7 +354,7 @@ structure. Example: SML. Advantage: reusability.
 \end{itemize}
 
 \subsection{Polymorfism}
-\label{sec:orga570a1f}
+\label{sec:orgf3f9d74}
 Python is way more reusable than C or SML. The secret to get closer to Python is
 polymorfism. A function or operator is \textbf{polymorphic} if it has at least two possible
 types.
@@ -365,40 +365,40 @@ Which statically typed language gets closer to python? Two types of polymorfism:
 \item universal
 \end{itemize}
 \subsubsection{Ad-hoc}
-\label{sec:orgd2f18ed}
+\label{sec:org5325717}
 \begin{itemize}
 \item Overload. Uses the types to choose the definition.
 \item Coersion. Uses the definition to choose a type conversion.
 \end{itemize}
 \begin{enumerate}
 \item Overload:
-\label{sec:orgd91b291}
+\label{sec:org215f950}
 An overloaded function name or operator is one that has at least two definitions, all
 of different types. Many languages have overloaded operators. There are languages
 that allow the programmer to change the meaning of operators.
 
 \item Coersion:
-\label{sec:orgebd6feb}
+\label{sec:org6e80b62}
 A coercion is an implicit type conversion, supplied automatically even if the
 programmer leaves it out.
 \end{enumerate}
 \subsubsection{Universal}
-\label{sec:orgf5f2d50}
+\label{sec:orgf290a2e}
 \begin{itemize}
 \item Parametric
 \item Subtyping
 \end{itemize}
 \begin{enumerate}
 \item Subtyping:
-\label{sec:orgd087e9a}
+\label{sec:orgdaa87ff}
 Barbara Liskov's principle. Subtyping \textbf{isn't} the same as inheritance. Not the only
 mecanism to create subptypes.
 \end{enumerate}
 
 \section{(02/09/19) Lambda calculus}
-\label{sec:orgbdf2300}
+\label{sec:orga7879fe}
 \subsection{Lambda expressions:}
-\label{sec:orga12ada7}
+\label{sec:org1689fab}
 
 Each lambda declares a different name.
 
@@ -420,7 +420,7 @@ Each lambda declares a different name.
 \end{align*}
 
 \subsection{Numbers}
-\label{sec:orgdd5788b}
+\label{sec:org888b874}
 A number is a function that takes a function s plus a constant z. The
 number N is formed by applying s N times on z.
 \begin{verbatim}
@@ -430,16 +430,16 @@ Two = \s.\z.s(sz)
 Three = \s.\z.s(s(sz))
 \end{verbatim}
 \section{(04/09/19) Currying and Higher order}
-\label{sec:orgc83fed8}
+\label{sec:org7a6f212}
 \subsection{Currying}
-\label{sec:org07c5c8c}
+\label{sec:orgc428115}
 Then it is not possible to implement a function which take multiple parameters? Of
 course, it is possible, by a methodology called currying.In currying every function
 takes only one argument and returns a function. While the last function in this series
 will return the desired output.
 
 \subsection{Anonymous Functions}
-\label{sec:org2462620}
+\label{sec:org8b40942}
 Starts with \emph{fn} (lambda functions). You can't do a recursive anonymous function because
 it doesn't have a name. For you to do one, you need the \emph{y combinator}.
 
@@ -456,7 +456,7 @@ In SML, we can create anonymous functions, e.g: (fn x => x + 2) 3.
 \end{itemize}
 
 \subsection{Higher Order}
-\label{sec:org833181a}
+\label{sec:orge8036be}
 Each function has an order:
 \begin{itemize}
 \item A function that does not take other functions as parameters, and does not return a
@@ -466,11 +466,11 @@ n+1, where n is the order of its highest-order parameter or returned value
 \end{itemize}
 \begin{enumerate}
 \item Foldr and Foldl
-\label{sec:orgb08b6fd}
+\label{sec:org32a0a09}
 Only return the same when operators are both associative and commutative.
 \end{enumerate}
 \section{(11/09/19) Data Types/algebric types}
-\label{sec:org9a0996b}
+\label{sec:org8a482f3}
 \href{http://www.webber-labs.com/wp-content/uploads/2015/08/mpl-11.pdf}{Slides}
 In C, the union is the closest to algebric types.
 
@@ -478,7 +478,7 @@ Data constructors :: Labels
 Data Types :: constructors
 
 \subsection{Datatype: union in ML}
-\label{sec:org43576d1}
+\label{sec:orgc3cd416}
 New types can be defined using the keyword datatype.
 
 These declarations define both:
@@ -510,11 +510,11 @@ fun isWeekDay x = if not (x = Sat orelse x = Sun) then true else false ;
 isWeekDay Mon;
 \end{minted}
 \subsection{Extint (of)}
-\label{sec:orgb6815a3}
+\label{sec:org6d319ae}
 To recover a data constructor’s parameters, use pattern matching. You can't do the same
 (pattern matching) with a function.
 \subsection{Option - type constructors}
-\label{sec:org6f2a962}
+\label{sec:orgedc96e3}
 Is a polymorphic type. Used by predefined functions (or your own) when the result is
 not always defined
 \begin{minted}[]{sml}
@@ -522,7 +522,7 @@ datatype 'a option = NONE | SOME of 'a;
 \end{minted}
 
 \section{(19/09/19) Review}
-\label{sec:orgf2e797b}
+\label{sec:orgcf8cd01}
 \begin{itemize}
 \item Ocaml and subtyping
 \item Types of languages
@@ -586,7 +586,7 @@ declaration. Implement add given succ. Convert church number to int.
 \item 
 \end{itemize}
 \section{(30/09/19) Memory allocation}
-\label{sec:org677d45b}
+\label{sec:org5652eed}
 Operating System delivers to the program all adressing space.
 
 Memory is organized in three parts by compiler:
@@ -606,7 +606,7 @@ Consequence: only \textbf{one} (ALWAYS) instance of static variable, because its
 in compile time.
 
 \subsection{Static Memory}
-\label{sec:org25e7bda}
+\label{sec:org6e77d67}
 \begin{enumerate}
 \item Static
 \item Global
@@ -620,9 +620,9 @@ Advantages: easy to program.
 Disavantages: lose recursion (big) and [doubt].
 
 \section{Dynamic Memory}
-\label{sec:orge2fe3a8}
+\label{sec:orge558f3f}
 \subsection{Stack}
-\label{sec:orgc62eec3}
+\label{sec:orgdf6f75f}
 Program is usually in a contiguous memory area. Later there is an area that the compiler
 uses during the program execution, called stack. Usually in C, you only get into a
 function with a call and leave with a return. In python, Lua and ruby, there are yield
@@ -632,7 +632,7 @@ With a stack, I solve the recursion and cuncurrent allocation problem. Almost al
 languages have a stack that grows top-down.
 
 \subsection{Heap}
-\label{sec:org2baac5f}
+\label{sec:orgd97775c}
 Doesn't solve the OO problem nor the "good and evil".  In \emph{C}, the heap is used with a
 malloc. in Python, everywhere. In java, with \emph{new}. In ML, \emph{clojures} stay in heap as well.
 The data that live more than its functions live in the heap. In OOP, the heap is more
@@ -655,19 +655,19 @@ reachable space if memory is being used.
 \end{enumerate}
 
 \section{(07/10/19)}
-\label{sec:org4fed661}
+\label{sec:orgb37e4a6}
 There is function and data (objects) orientation. Object O is a natural form to get
 encapsulation. Object orientation is the data knowing how to do stuff.  Simula was the
 first OO language. Smalltalk was later (more know).  Messages are methods today. It was
 not common to put operations in tables.
 \subsection{Language OO that don't have classes}
-\label{sec:orgc7fd45b}
+\label{sec:org49ffb4e}
 \begin{itemize}
 \item Lua
 \item Javascript
 \end{itemize}
 \subsection{Feautres all OO}
-\label{sec:org8802ab7}
+\label{sec:org1f023a1}
 \begin{itemize}
 \item have objects
 \item have methods
@@ -676,66 +676,66 @@ not common to put operations in tables.
 \item Dynamic method invocation
 \end{itemize}
 \subsection{Some features in OO (not common to all)}
-\label{sec:org9c68fb9}
+\label{sec:org37e82a0}
 – Classes
 – Prototypes
 – Inheritance
 – Encapsulation
 – Polymorphism
 \subsection{What is an object?}
-\label{sec:orgd5e5a0d}
+\label{sec:org71cc2a1}
 Object is data. It is a table. There are pointers to functions and to itself.
 \subsection{Can you create obj without classes?}
-\label{sec:org5c5398d}
+\label{sec:orgc9dee4d}
 Yes. Example python and scala (clojures).
 \subsection{What is inheritance?}
-\label{sec:org863de0e}
+\label{sec:org17dff2b}
 Reuse mechanism. In many lanuages like python and Java, inheritance is subtyping. Not
 in haskell and Ocaml.
 \subsection{Can you think about a situation in which we would like to have multiple inheritance?}
-\label{sec:org71ae0b8}
+\label{sec:org8d4c7cc}
 Python and cpp have. Java doesn't. Few languages have multiple inheritance due to
 ambiguity.
 \subsection{What is the Liskov's substitution principle?}
-\label{sec:orgb0a30cd}
+\label{sec:org9b44d1e}
 If S is a subtype of T, then S can be used in any situation where T is expected.
 \subsection{Methods in python and Java?}
-\label{sec:org45a62fd}
+\label{sec:org5969b60}
 \begin{itemize}
 \item In python, with inheritance, the call is proportional to the tree size.
 \item In Java, it is O(1).
 \end{itemize}
 \subsection{Dynamic method invocation}
-\label{sec:org56a9a13}
+\label{sec:orgf0d6c5a}
 \begin{itemize}
 \item O(1) call is only possible in statically typed languages. For python, the type and
 adresses are only know in run time.
 \end{itemize}
 \subsection{What is the complexity to find the target of a call in Python?}
-\label{sec:orga512c58}
+\label{sec:orgf6cf279}
 O(n).
 \subsection{What about the complexity to find the target of a call in Java?}
-\label{sec:org7b315d9}
+\label{sec:org34fcc0f}
 O(1).
 \subsection{Top down vs bottom up}
-\label{sec:org4b88cd4}
+\label{sec:orga981e34}
 \section{(09/10/19) Error handling}
-\label{sec:org00598ae}
+\label{sec:orgd00ebea}
 A type system limits the number of programs you can write. and
 proprietary types in rust.
 \subsection{Advantage of these in rust:}
-\label{sec:orgaadb527}
+\label{sec:org7f301a5}
 Avoid aliasing. Avoid errors.
 \subsection{Vectorization:}
-\label{sec:orga5b0320}
+\label{sec:org673e3f3}
 Use big registers to do matrix multiplication. Only works when x and y point to
 different places.
 \subsection{Even stronger type systems [idris/agola]}
-\label{sec:org577368e}
+\label{sec:org1c91b6b}
 Dependent types. Disvantage: limit the number of programs one can write. Advantage:
 security.
 \subsection{C}
-\label{sec:orga802b29}
+\label{sec:org116fd0c}
 5 types of error handling:
 
 \begin{itemize}
@@ -748,7 +748,7 @@ option. Atoi returns a special value in c.
 \item Long jump: dynamic go to to simulate exception.
 \end{itemize}
 \subsection{Eiffel (contract programming)}
-\label{sec:org687b1a8}
+\label{sec:orgcd5a87e}
 \begin{itemize}
 \item 80's language
 \item pre conditions (require)
@@ -758,7 +758,7 @@ option. Atoi returns a special value in c.
 
 
 \subsection{Exceptions (most common)}
-\label{sec:org08b541d}
+\label{sec:org41ac06d}
 3 things:
 \begin{enumerate}
 \item define - class Ex(Exception)
@@ -768,14 +768,14 @@ option. Atoi returns a special value in c.
 
 Python (class that inherits Exception), Java, cpp, sml
 \subsubsection{What is an excption?}
-\label{sec:org7fcb602}
+\label{sec:org033c50c}
 \subsubsection{Advantages}
-\label{sec:orgf4b4152}
+\label{sec:org8dc1a60}
 \subsubsection{What is an exception in Java?}
-\label{sec:orgdd3a382}
+\label{sec:org3505889}
 \textbf{*}
 \section{(14/10/19) Parameters}
-\label{sec:org5c8611c}
+\label{sec:orgbaef0a1}
 \begin{itemize}
 \item Formal parameters: in function declaration.
 \item Real parameters: in funcion call.
@@ -800,18 +800,18 @@ def f(a, L=[]):
 If you do this and call f(3) after f(2), it returns a list [2, 3].
 \end{itemize}
 \subsection{Strict}
-\label{sec:org6b76e21}
+\label{sec:org376ec5e}
 \subsubsection{Pass by value}
-\label{sec:orgdd07042}
+\label{sec:orgaf41ce6}
 Java, python. If you pass something with pointers, it is by value (address copy) -
 syntatic sugar. In python, you can alter the thing which you are pointing to, not the
 thing itself.
 \subsubsection{Pass by reference}
-\label{sec:orgd9a08be}
+\label{sec:org3e4d0aa}
 Cpp (\textbf{only one}). If you pass something with the address as formal parameters, it is by
 reference.
 \subsubsection{Not used anymore}
-\label{sec:org5e2791c}
+\label{sec:org87d3631}
 \begin{itemize}
 \item Result: the parameter is uninitialized, and it is filled with a value
 \end{itemize}
@@ -820,21 +820,21 @@ before the function returns.
 \item Value result: same as result, but parameter is initialized.
 \end{itemize}
 \subsubsection{Why are there only a few pass by reference languages?}
-\label{sec:org9de9d91}
+\label{sec:org142ea34}
 Collateral effects. With attribution, there is a change in state. By altering the
 name, you can provoke a change in another name. If a program has pointers, it is
 really hard for the program to make the code faster (ex matrix multiplication).
 \subsubsection{How to make swape without an aux?}
-\label{sec:orgb8f6eb5}
+\label{sec:orgf5e8383}
 \begin{itemize}
 \item XOR swap. If you try to swap \&a with \&a in cpp, everything is 0. Bad business (same
 address). XOR of something with itself is 0. If you alter one, the effect will be
 felt on the other thing.
 \end{itemize}
 \subsubsection{Keyword restrict (c only - not cpp)}
-\label{sec:org2ece700}
+\label{sec:org01aff7e}
 \subsection{Strict vs Lazy languages:}
-\label{sec:orgd54067a}
+\label{sec:org06a7296}
 Strict: arguments are evaluated before passing. Python.
 \begin{itemize}
 \item False and 1 / 0 == 0
@@ -845,12 +845,12 @@ Strict: arguments are evaluated before passing. Python.
 \item ZeroDivisionError: integer division or modulo by zero
 \end{itemize}
 \subsection{Lazy or not strict}
-\label{sec:org8ad079a}
+\label{sec:org2bdc2dd}
 \begin{itemize}
 \item Haskell, Scala, cpp and c. Only evaluate if you actually need it.
 \end{itemize}
 \subsubsection{Pass by macro}
-\label{sec:org7d2b32e}
+\label{sec:orgf5e452d}
 \begin{enumerate}
 \item C
 
@@ -864,11 +864,11 @@ Strict: arguments are evaluated before passing. Python.
 Macro expansion: the parameter is evaluated every time it is used.
 \begin{enumerate}
 \item 10.0) What is the advantage of macro expansion?
-\label{sec:org27880f6}
+\label{sec:org4fd13bf}
 Resource that allows programmers to alter language syntax, pass type as
 parameters. Ex foreach. With macros, u can create parametric polymorphism in c.
 \item 10.1) What is the problem with macro expansion (serious problem)?
-\label{sec:org1ff5efa}
+\label{sec:org25318e4}
 Two problems: variable capture and multiple evaluation (++b).
 \begin{minted}[]{cpp}
 #include "stdio.h"
@@ -884,6 +884,122 @@ int main() {
 \end{minted}
 \end{enumerate}
 \subsubsection{Pass by name (algo/simula)}
-\label{sec:org9eb606c}
+\label{sec:org1502ecf}
 NÃO CAI NA PROVA.
+\section{(16/10/19) Introduction to prolog}
+\label{sec:org3c3640b}
+\begin{itemize}
+\item Declarative: stateless.
+\item Logical language.
+\item Order \textbf{matters}.
+\item Horn clause (Alfred Horn).
+\item Doesn't have a pattern (each compiler has its own version).
+\item REPL: interactive environment (java doesn't have it) - ipython.
+\item Programs have
+\end{itemize}
+\subsection{Horn Clauses are implications}
+\label{sec:orga24a965}
+There is a procedure to check if a clause is false or true.
+
+\begin{verbatim}
+~a and ~b and ~c -> y or u
+\end{verbatim}
+
+Easiest language will see.
+\subsection{Unification}
+\label{sec:org94c5a9d}
+\begin{itemize}
+\item Alan Robinson
+\item Same algorithm to make type inference in ml, haskell, etc.
+The cpp auto is not the same, it is much simpler.
+\item Exponential.
+\end{itemize}
+\subsection{The core of prolog is the term:}
+\label{sec:orgfe3bd85}
+\begin{itemize}
+\item atoms:
+\begin{itemize}
+\item constants: 123, -123, etc
+\item alpha-numeric symbols: fernando, *, ., =, [.
+\item atoms start with lower case.
+\end{itemize}
+\item variable: names beginning with an upper-case letter:
+X, Fernando, \_
+\item composite terms: an atom plus a sequence of terms between parentheses:
+x(Y, Z), x(y, Z)
+
+\begin{verbatim}
+atom (atom or composite terms)
+\end{verbatim}
+\end{itemize}
+\subsection{Ex prolog program}
+\label{sec:orgf13ce17}
+\begin{itemize}
+\item Predicates end with a dot. It has six truths (predicates).
+\end{itemize}
+\begin{verbatim}
+parent(margaret, kim).
+parent(margaret, kent).
+parent(herbert, jean).
+\end{verbatim}
+\subsection{How to discover if esther has a grand-grandchild?}
+\label{sec:org5c71abb}
+\begin{verbatim}
+?- parent(esther, C), parent(C, GC), parent(GC, GGC).
+\end{verbatim}
+
+\subsection{Inference rules(implications)}
+\label{sec:org38e690d}
+\begin{itemize}
+\item Look like functions syntatically, but not semantically
+\item If the right side is true, the left is true.
+\begin{verbatim}
+greatgrandparent(GGP, GGC) :- parent(GGP, GP), parent(GP, P), parent(P, GGC).
+\end{verbatim}
+\item Ancestor
+\begin{verbatim}
+ancestor(X, Y) :- parent(X, Y).
+ancestor(X, Y) :- ancestor(parent(Z, X), Y).
+\end{verbatim}
+\end{itemize}
+\subsection{Lists}
+\label{sec:org1823f81}
+\begin{itemize}
+\item Pattern matching
+\item[{| is like}] in ml.
+\item Append:
+\begin{minted}[]{prolog}
+myAppend([], L, L).
+myAppend([H|L1], L2, [H|L3]) :- myAppend(L1, L2, L3).
+\end{minted}
+\item Member
+\begin{minted}[]{prolog}
+myMember(H, [H|_]).
+myMember(H, [_|T]) :- myMember(H, T).
+\end{minted}
+\item Select
+\begin{minted}[]{prolog}
+mySelect(H, [H|L1], L1).
+mySelect(X, [H|L], [H|LR]) :- mySelect(X, L, LR).
+\end{minted}
+\item Rev(L1, L2)
+\begin{minted}[]{prolog}
+rev([], []).
+rev([X|T], R) :- rev(T, RR), myAppend(RR, H, R).
+\end{minted}
+\item Siblings: prolog has denial, but it doesn't work well.
+\item Sublist:
+\begin{minted}[]{prolog}
+sublist([], []).
+sublist([H|T], [H|S]) :- sublist(T, S).
+sublist([_|T], S) :- sublist(T, S).
+\end{minted}
+\item Perm:
+\begin{minted}[]{prolog}
+perm([], []);
+perm([H|T], L) :- perm(T, Lx), select(H, L, Lx).
+\end{minted}
+\end{itemize}
+\subsection{Symbolic manipulations}
+\label{sec:org2cf1018}
 \end{document}

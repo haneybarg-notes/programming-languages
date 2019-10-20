@@ -647,10 +647,10 @@
 ** Lazy or not strict
    - Haskell, Scala, cpp and c. Only evaluate if you actually need it.
 *** Pass by macro
-    1. C 
+    1. C
 
     2. Cpp
- 
+
     3. Lisp
 
     4. Rust
@@ -675,3 +675,96 @@
      #+END_SRC
 *** Pass by name (algo/simula)
     NÃO CAI NA PROVA.
+* (16/10/19) Introduction to prolog
+  - Declarative: stateless.
+  - Logical language.
+  - Order *matters*.
+  - Horn clause (Alfred Horn).
+  - Doesn't have a pattern (each compiler has its own version).
+  - REPL: interactive environment (java doesn't have it) - ipython.
+  - Programs have
+** Horn Clauses are implications
+   There is a procedure to check if a clause is false or true.
+
+   #+begin_example
+     ~a and ~b and ~c -> y or u
+   #+end_example
+
+   Easiest language will see.
+** Unification
+   - Alan Robinson
+   - Same algorithm to make type inference in ml, haskell, etc.
+     The cpp auto is not the same, it is much simpler.
+   - Exponential.
+** The core of prolog is the term:
+    - atoms:
+     - constants: 123, -123, etc
+     - alpha-numeric symbols: fernando, *, ., =, [.
+     - atoms start with lower case.
+    - variable: names beginning with an upper-case letter:
+     X, Fernando, _
+    - composite terms: an atom plus a sequence of terms between parentheses:
+     x(Y, Z), x(y, Z)
+
+     #+begin_example
+       atom (atom or composite terms)
+     #+end_example
+** Ex prolog program
+   - Predicates end with a dot. It has six truths (predicates).
+   #+begin_example
+   parent(margaret, kim).
+   parent(margaret, kent).
+   parent(herbert, jean).
+   #+end_example
+** How to discover if esther has a grand-grandchild?
+   #+begin_example
+     ?- parent(esther, C), parent(C, GC), parent(GC, GGC).
+   #+end_example
+
+** Inference rules(implications)
+   - Look like functions syntatically, but not semantically
+   - If the right side is true, the left is true.
+     #+begin_example
+       greatgrandparent(GGP, GGC) :- parent(GGP, GP), parent(GP, P), parent(P, GGC).
+     #+end_example
+   - Ancestor
+     #+begin_example
+       ancestor(X, Y) :- parent(X, Y).
+       ancestor(X, Y) :- ancestor(parent(Z, X), Y).
+     #+end_example
+** Lists
+   - Pattern matching
+   - | is like :: in ml.
+   - Append:
+      #+BEGIN_SRC prolog
+        myAppend([], L, L).
+        myAppend([H|L1], L2, [H|L3]) :- myAppend(L1, L2, L3).
+      #+END_SRC
+   - Member
+      #+BEGIN_SRC prolog
+        myMember(H, [H|_]).
+        myMember(H, [_|T]) :- myMember(H, T).
+      #+END_SRC
+   - Select
+     #+BEGIN_SRC prolog
+       mySelect(H, [H|L1], L1).
+       mySelect(X, [H|L], [H|LR]) :- mySelect(X, L, LR).
+     #+END_SRC
+   - Rev(L1, L2)
+     #+BEGIN_SRC prolog
+       rev([], []).
+       rev([X|T], R) :- rev(T, RR), myAppend(RR, H, R).
+     #+END_SRC
+   - Siblings: prolog has denial, but it doesn't work well.
+   - Sublist:
+     #+BEGIN_SRC prolog
+       sublist([], []).
+       sublist([H|T], [H|S]) :- sublist(T, S).
+       sublist([_|T], S) :- sublist(T, S).
+     #+END_SRC
+   - Perm:
+     #+BEGIN_SRC prolog
+       perm([], []);
+       perm([H|T], L) :- perm(T, Lx), select(H, L, Lx).
+     #+END_SRC
+** Symbolic manipulations
